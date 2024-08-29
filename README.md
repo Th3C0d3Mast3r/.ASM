@@ -53,7 +53,3 @@ To run the Assembly language programs, you will need the following tools:
 ## Running the Program
 
 Once these steps are followed, your program will run, and you can see the output. Debugging commands like `d` and `g` help you visualize memory locations and control program execution.
-
----
-
-Feel free to contribute or reach out for improvements or suggestions!
