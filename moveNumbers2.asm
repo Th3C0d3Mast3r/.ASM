@@ -22,7 +22,7 @@ xyz: MOV AX, [SI]                       ; the brackets [] specify they are the v
      ADD SI, 02
      ADD DI, 02
      DEC CL
-     JNZ xyz
+     JNZ xyz   
 
 MOV AH, 4Ch
 INT 21h
