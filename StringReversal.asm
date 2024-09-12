@@ -1,0 +1,35 @@
+; THIS IS THE CODE FOR STRING REVERSAL
+DATA SEGMENT
+String1 db "ABCD","$"
+String2 db 1 dup(?)
+DATA ENDS
+
+
+ASSUME DS:DATA, CS:CODE
+CODE SEGMENT
+START:
+	MOV AX, DATA
+	MOV DS, AX
+	MOV CL, 04
+	
+	LEA SI, String1
+	LEA DI, String2
+
+	ADD DI, CL
+	MOV BYTE PTR [DI], '$'
+	DEC DI
+
+rev:
+	MOV AL, [SI]
+	MOV [DI], AL
+	INC SI
+	DEC DI
+	DEC CL
+	JNZ rev
+	
+	CLD
+	LEA DX, String2
+	MOV AH, 09h			; this is the interrupt to print on console
+	INT 21H
+CODE ENDS
+END START
