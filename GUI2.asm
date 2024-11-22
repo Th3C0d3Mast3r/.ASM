@@ -15,7 +15,7 @@ START:
 
     MOV AX, STACK
     MOV SS, AX
-    MOV SP, 100H
+    MOV SP, 100H                    ; initilaize the stack to 100
 
     MOV AH, 09H                     ; Print string
     LEA DX, message
@@ -25,7 +25,7 @@ START:
     INT 21H
 
     MOV AL, 13H                     ; Set 320x200 video mode
-    MOV AH, 0
+    MOV AH, 0                       ; start the video mode
     INT 10H
 
     ; Initialize starting coordinates and base width
